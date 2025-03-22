@@ -1,0 +1,44 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*img :hover,:focus */
+.gallery-image:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+/* modalImg stylecss  */
+
+.sl-close,
+.sl-prev,
+.sl-next,
+.sl-counter {
+  color: #ffffff !important;
+}
+.sl-wrapper {
+  background: rgba(46, 47, 66, 0.8);
+}
+/* Img style */
+.gallery-image {
+  width: 360px;
+  height: 200px;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+  object-fit: cover;
+  cursor: zoom-in;
+  transition: transform 0.5s ease, opacity 0.5s ease !important;
+}
+/* ul gallery */
+.gallery {
+  margin-left: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 24px;
+}
