@@ -10,49 +10,34 @@ const input = form.querySelector('input');
 const textArea = form.querySelector('textarea');
 const button = form.querySelector('button');
 
-input.addEventListener('input', handleInput);
-textArea.addEventListener('input', handleTextarea);
+// input.addEventListener('input', handleInput);
+// textArea.addEventListener('input', handleTextarea);
 form.addEventListener('submit', handleButton);
 populationDataInp();
 
-function handleTextarea(event) {
-  const message = event.target.value;
-  formData.message = message;
+form.addEventListener('input', event => {
+  formData[event.target.name] = event.target.value;
   localStorage.setItem(KEY, JSON.stringify(formData));
-}
-function handleInput(event) {
-  const email = event.target.value;
-  formData.email = email;
-  localStorage.setItem(KEY, JSON.stringify(formData));
-}
+});
 
 function populationDataInp() {
   const saved = JSON.parse(localStorage.getItem(KEY)) || {};
   if (saved.message) {
     textArea.value = saved.message;
+    formData.message = saved.message;
   }
 
   if (saved.email) {
     input.value = saved.email;
+    formData.email = saved.email;
   }
-  formData.message = saved.message;
-  formData.email = saved.email;
 }
 
 function handleButton(event) {
   event.preventDefault();
 
-  const MesValue = textArea.value
-    .split(' ')
-    .map(word => word.trim())
-    .filter(word => word)
-    .join(' ');
-
-  const emailValue = input.value
-    .split(' ')
-    .map(word => word.trim())
-    .filter(word => word)
-    .join(' ');
+  const MesValue = textArea.value.trim();
+  const emailValue = input.value.trim();
 
   if (MesValue === '' || emailValue === '') {
     alert('Fill please all fields');
@@ -62,9 +47,10 @@ function handleButton(event) {
     formData.email = '';
     localStorage.setItem(KEY, JSON.stringify(formData));
     localStorage.removeItem(KEY);
-    event.target.reset();
+    form.reset();
   }
 }
+
 //style
 input.addEventListener('focus', handleFocus);
 function handleFocus() {
