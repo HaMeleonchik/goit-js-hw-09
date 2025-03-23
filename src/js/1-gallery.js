@@ -87,9 +87,6 @@ function createMurkup(arr) {
     .join('');
 }
 new SimpleLightbox('.gallery a', {
-  captions: true,
   captionsData: 'alt',
   captionDelay: 250,
-  animationSpeed: 250,
-  fadeSpeed: 250,
 });
