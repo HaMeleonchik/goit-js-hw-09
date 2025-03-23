@@ -8,5 +8,5 @@ import{S as a}from"./vendor-CgTBfC_f.js";const i=[{preview:"https://cdn.pixabay.
 		/>
 	</a>
 </li>
-  `).join("")}new a(".gallery a",{captions:!0,captionsData:"alt",captionDelay:250,animationSpeed:250,fadeSpeed:250});
-//# sourceMappingURL=1-gallery-BdxAAlUn.js.map
+  `).join("")}new a(".gallery a",{captionsData:"alt",captionDelay:250});
+//# sourceMappingURL=1-gallery-B6wC59Ib.js.map
