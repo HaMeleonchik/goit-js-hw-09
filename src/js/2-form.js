@@ -10,8 +10,6 @@ const input = form.querySelector('input');
 const textArea = form.querySelector('textarea');
 const button = form.querySelector('button');
 
-// input.addEventListener('input', handleInput);
-// textArea.addEventListener('input', handleTextarea);
 form.addEventListener('submit', handleButton);
 populationDataInp();
 
